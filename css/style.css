@@ -1,0 +1,48 @@
+.main {
+	background-image: url('https://images.unsplash.com/photo-1452562961439-283b44358d48?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6d42bab697c0d260092d5634d965ed7c');
+	background-size: 100% 100%;
+	margin-top: -1.5em;
+	height: 1000px;
+}
+
+.title {
+	text-align: center;
+	font-size: 2em;
+	padding-top: 1em;
+}
+
+.userEntry {
+	margin-top: 12em;
+}
+
+input {
+	margin-left: 35em;
+	margin-right: 35em;
+	margin-top: 2em;
+	padding: 1em;
+	padding-left: 8em;
+}
+
+button {
+	text-align: center;
+	margin-left: 40em;
+	margin-top: 1em;
+	padding: 1em;
+	padding-left: 3em;
+	padding-right: 3em;
+}
+
+.results {
+	list-style: none;
+	margin-left: 21em;
+	margin-right: 21em;
+	background-color: linen;
+	padding-top: 2em;
+	padding-bottom: 2em;
+	margin-top: -19em;
+	z-index: 99;
+}
+
+.results li {
+	line-height: 3em;
+}
