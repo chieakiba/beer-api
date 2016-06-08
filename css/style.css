@@ -19,8 +19,8 @@ input {
 	margin-left: 45em;
 	margin-right: 45em;
 	margin-top: 2em;
-	padding: 1em;
-	padding-left: 8em;
+	padding: 1em 5em;
+	text-align: center;
 }
 
 button {
@@ -32,17 +32,28 @@ button {
 	padding-right: 3em;
 }
 
-.results {
+.breweryResults {
 	list-style: none;
 	margin-left: 21em;
 	margin-right: 21em;
 	background-color: rgba(250, 204, 204, .5);
 	padding-top: 2em;
 	padding-bottom: 2em;
-	margin-top: -19em;
+	margin-top: -25em;
 	z-index: 99;
 }
 
-.results li {
+.beerResults {
+	list-style: none;
+	margin-left: 21em;
+	margin-right: 21em;
+	background-color: rgba(250, 204, 204, .5);
+	padding-top: 2em;
+	padding-bottom: 2em;
+	margin-top: -25em;
+	z-index: 99;
+}
+
+.breweryResults li, .beerResults li {
 	line-height: 3em;
 }

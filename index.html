@@ -8,25 +8,36 @@
 </head>
 <body>
 	<div class='main'>
-		<h1 class='title'>Find that Brewery!</h1>
+		<h1 class='title'>Find that Beer!</h1>
 		<div class='userEntry'>
-			<input class='cityInput' placeholder='Enter city' required></br>
-			<input class='stateInput' placeholder='Enter State' required>
+			<input class='cityInput' placeholder='Enter city'></br>
+			<input class='stateInput' placeholder='Enter State'>
 		</div>
 		<div>
-			<button class='search'>Search</button>
+			<button class='searchBrewery'>Search</button>
 		</div>
-		<ul class='results'>
-			<li class='name'>Name</li>
-			<li class='street-address'>Street Address</li>
-			<li class='city'>City</li>
-			<li class='state'>State</li>
-			<li class='zipcode'>Zip Code</li>
-			<li class='phone'>Phone number</li>
-			<li class='website'>Website</li>
-			<li class='hours'>Hours of Operation</li>
-			<li class='tour'>Tour info</li>
+		<div class='beerFinder'>
+			<input class='beer' placeholder='Enter the name of beer'></br>
+		</div>
+		<div>
+			<button class='searchBeer'>Search</button>
+		</div>
+		<ul class='breweryResults'>
+			<li class='nameBrewery'>Name</li>
+			<li class='street-addressBrewery'>Street Address</li>
+			<li class='cityBrewery'>City</li>
+			<li class='stateBrewery'>State</li>
+			<li class='zipcodeBrewery'>Zip Code</li>
+			<li class='phoneBrewery'>Phone number</li>
+			<li class='websiteBrewery'>Website</li>
+			<li class='hoursBrewery'>Hours of Operation</li>
+			<li class='tourBrewery'>Tour info</li>
 		</ul>
+		<ul class='beerResults'>
+			<li class='nameBeer'>Name</li>
+			<li class='abvBeer'>Alcohol by volume of the beer</li>
+			<li class='foodPairingBeer'>Best food to pair with</li>
+			<li class='descriptionBeer'>Description</li>
 	</div>
 	<script src="https://code.jquery.com/jquery.min.js"></script>
 	<script src='js/app.js'></script>
