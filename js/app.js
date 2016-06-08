@@ -1,10 +1,12 @@
 //global variable
-var userCitySearch = $('.cityInput').val();
-var userStateSearch = $('.stateInput').val();
-var beerSearch = $('.beer').val();
+var userCitySearch;
+var userStateSearch;
+var beerSearch;
 
 //API function for brewery request
 function getBreweryRequest(city, state) {
+    userCitySearch = $('.cityInput').val();
+    userStateSearch = $('.stateInput').val();
     var params = {
         key: '4eee5db4403b144dbc068306c3d4680f',
         locality: userCitySearch,
@@ -24,6 +26,7 @@ function showBreweryResults(items) {
 
 //API function for beer request
 function getBeerRequest(name) {
+    beerSearch = $('.beer').val();
     var params = {
         key: '4eee5db4403b144dbc068306c3d4680f',
         name: beerSearch
@@ -57,16 +60,12 @@ function showMapResults(items) {
 }
 
 $(document).ready(function() {
-    $(function() {
-        $('.searchBrewery').click(function(event) {
-            event.preventDefault();
-            getBreweryRequest(userCitySearch, userStateSearch);
-        });
-    })
-    $(function() {
-        $('.searchBeer').click(function(event) {
-            event.preventDefault();
-            getBeerRequest(beerSearch);
-        })
+    $('.searchBrewery').click(function(event) {
+        event.preventDefault();
+        getBreweryRequest(userCitySearch, userStateSearch);
+    });
+    $('.searchBeer').click(function(event) {
+        event.preventDefault();
+        getBeerRequest(beerSearch);
     })
 })
