@@ -19,15 +19,15 @@ function getBreweryRequest(city, state) {
     })
 }
 
-// function showBreweryResults(items) {
-//     var breweryName = name; 
-//     $.each(items, function(index, item){
-//         console.log(item);
-//         breweryName += name;
-//     })
-//     $('.nameBrewery').append(breweryName);
+function showBreweryResults(items) {
+    var breweryName = name; 
+    $.each(items, function(index, item){
+        console.log(item);
+        breweryName += name;
+    })
+    $('.nameBrewery').append(breweryName);
 
-// }
+}
 
 //API function for beer request
 function getBeerRequest(name) {
@@ -39,13 +39,13 @@ function getBeerRequest(name) {
     url = 'http://api.brewerydb.com/v2/beers';
     $.getJSON(url, params, function(data) {
         console.log(data);
-        showBeerResults(data.item);
+        showBeerResults(data.data);
     })
 }
 
-function showBeerResults(array) {
+function showBeerResults(data) {
     var beerInfo = '';
-    $.each(array, function(index, item){
+    $.each(data, function(index, item){
         console.log(item);
         beerInfo +=  '<li class="nameBeer">Name: ' + item.name + '</li>' + '<li class="abvBeer">ABV: ' + item.abv + '</li>' + '<li class="foodPairingBeer">Best food to pair with: ' + item.foodPairings + '</li>' + '<li class="descriptionBeer">Description: ' + item.description + '</li>'
     });
