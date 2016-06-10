@@ -33,6 +33,7 @@ button {
 }
 
 .breweryResults {
+	display: none;
 	list-style: none;
 	margin-left: 21em;
 	margin-right: 21em;
