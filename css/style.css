@@ -1,3 +1,4 @@
+/*background*/
 .main {
 	background-image: url('https://images.unsplash.com/photo-1452562961439-283b44358d48?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6d42bab697c0d260092d5634d965ed7c');
 	background-size: 100% 100%;
@@ -5,42 +6,66 @@
 	height: 1000px;
 }
 
+/*Header*/
 .title {
 	text-align: center;
 	font-size: 2em;
 	padding-top: 1em;
 }
 
+/*Map*/
+#map {
+	height: 20em;
+	width: 35em;
+	margin-top: 20em;
+	margin-left: 2em;
+}
+
+/*User Entry*/
 .userEntry {
-	margin-top: 12em;
+	margin-top: -35em;
+	margin-left: 15em;
 }
 
 input {
-	margin-left: 45em;
-	margin-right: 45em;
-	margin-top: 2em;
+	margin-top: 1em;
 	padding: 1em 5em;
 	text-align: center;
 }
 
+.beerFinder {
+	margin-top: -10em;
+	margin-left: 50em;
+}
+
+/*buttons*/
+
 button {
 	text-align: center;
-	margin-left: 50em;
 	margin-top: 1em;
 	padding: 1em;
 	padding-left: 3em;
 	padding-right: 3em;
 }
 
+.searchBrewery {
+	margin-left: 20em;
+}
+
+.searchBeer {
+	margin-left: 55em;
+}
+
+/*Search Results*/
+
 .breweryResults {
 	list-style: none;
-	margin-left: 21em;
-	margin-right: 21em;
+	margin-left: 41em;
+	margin-right: 5em;
 	background-color: rgba(250, 204, 204, .5);
 	padding-top: 2em;
 	padding-bottom: 2em;
-	margin-top: -25em;
-	z-index: 99;
+	margin-top: 3em;
 }
 
 .beerResults {
@@ -50,10 +75,15 @@ button {
 	background-color: rgba(250, 204, 204, .5);
 	padding-top: 2em;
 	padding-bottom: 2em;
-	margin-top: -25em;
-	z-index: 99;
+	margin-top: 3em;
 }
 
 .breweryResults li, .beerResults li {
 	line-height: 3em;
+}
+
+hr {
+	border-top: 1px solid black;
+	width: 92%;
+	margin-right: 3em;
 }
