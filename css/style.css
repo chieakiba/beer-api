@@ -79,11 +79,18 @@ button {
 }
 
 .breweryResults li, .beerResults li {
-	line-height: 3em;
+	line-height: 1.5em;
 }
 
 hr {
 	border-top: 1px solid black;
 	width: 92%;
 	margin-right: 3em;
+}
+
+/*Pagination*/
+.pages {
+	margin-left: auto;
+	margin-right: auto;
+	width: 28%;
 }

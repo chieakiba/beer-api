@@ -4,6 +4,15 @@ var userStateSearch;
 var beerSearch;
 var map;
 
+//Pagination
+$(function() {
+    $('.pages').pagination({
+        items: 100,
+        itemsOnPage: 2,
+        cssStyle: 'light-theme'
+    });
+});
+
 //API function for beer request
 function getBeerRequest(name) {
     beerSearch = $('.beer').val();
@@ -50,7 +59,7 @@ function showBreweryResults(data) {
     var breweryName = '';
     $.each(data, function(index, item) {
         console.log(item);
-        breweryInfo += "<hr><li class='nameBrewery'>Name: " + item.brewery.name + "</li>" + "<li class='street-addressBrewery'>Street Address: " + item.streetAddress + "</li>" + "<li class='cityBrewery'>City: " + item.locality + "</li>" + "<li class='stateBrewery'>State: " + item.region + "</li>" + "<li class='zipcodeBrewery'>Zip Code: " + item.postalCode + "</li>" + "<li class='phoneBrewery'>Phone number: " + item.phone + "</li>" + "<li class='websiteBrewery'>Website: " + item.website + "</li>" + "<li class='hoursBrewery'>Hours of Operation: " + item.hoursOfOperation + "</li>" + "<li class='tourBrewery'>Tour info: " + item.tourInfo + "</li></hr>"
+        breweryInfo += "<hr><li class='nameBrewery'>Name: " + item.brewery.name + "</li>" + "<li class='street-addressBrewery'>Street Address: " + item.streetAddress + "</li>" + "<li class='cityBrewery'>City: " + item.locality + "</li>" + "<li class='stateBrewery'>State: " + item.region + "</li>" + "<li class='zipcodeBrewery'>Zip Code: " + item.postalCode + "</li>" + "<li class='phoneBrewery'>Phone number: " + item.phone + "</li>" + "<li class='websiteBrewery'>Website: " + item.website + "</li>" + "<li class='hoursBrewery'>Hours of Operation: " + item.hoursOfOperation + "</li></hr>"
         breweryLatitude += item.latitude;
         breweryLongitude += item.longitude;
         breweryName += item.brewery.name;
@@ -58,7 +67,10 @@ function showBreweryResults(data) {
     $('.breweryResults').append(breweryInfo);
     //Google Maps API
     function breweryMap() {
-        var myLatLng = {lat: breweryLatitude, lng: breweryLongitude};
+        var myLatLng = {
+            lat: breweryLatitude,
+            lng: breweryLongitude
+        };
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: 4,
             center: myLatLng
