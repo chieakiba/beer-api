@@ -59,7 +59,7 @@ function mapRequest() {
         key: 'AIzaSyC67XoBhkayUP2I11lJdcFB4TD3gFBBvs0',
 
     }
-    url = '';
+    url = 'http://maps.googleapis.com/';
     $.getJSON(url, params, function(data) {
         console.log(data);
         showMapResults(data.items);
