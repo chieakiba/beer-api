@@ -4,15 +4,6 @@ var userStateSearch;
 var beerSearch;
 var map;
 
-//Pagination
-$(function() {
-    $('.pages').pagination({
-        items: 100,
-        itemsOnPage: 2,
-        cssStyle: 'light-theme'
-    });
-});
-
 //API function for beer request
 function getBeerRequest(name) {
     beerSearch = $('.beer').val();
@@ -93,6 +84,21 @@ $(document).ready(function() {
         event.preventDefault();
         getBreweryRequest(userCitySearch, userStateSearch);
         $('.breweryResults').show();
+        var resultsOnPage = $('.pages');
+        $('.pages').pagination({
+            dataSource: 'http://api.brewerydb.com/v2/locations',
+            locator: 'items',
+            pageSize: 5,
+            ajax: {
+                beforeSend: function() {
+                    resultsOnPage.html('Loading data...');
+                }
+            },
+            callback: function(data, pagination) {
+                var breweryData = template(data);
+                resultsOnPage.html(breweryData);
+            }
+        })
     });
     $('.searchBeer').click(function(event) {
         event.preventDefault();
