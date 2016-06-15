@@ -39,7 +39,17 @@ function getBreweryRequest(city, state) {
     url = 'http://api.brewerydb.com/v2/locations';
     $.getJSON(url, params, function(data) {
         console.log(data);
-        showBreweryResults(data.data);
+        $('.pages').pagination({
+            dataSource: data,
+            locator: 'data',
+            pageSize: 5,
+            callback: function(data, pagination) {
+                console.log(data);
+                var breweryData = showBreweryResults(data);
+                console.log(breweryData, 'hello');
+                $('.breweryResults').html(breweryData);
+            }
+        });
     })
 }
 
@@ -49,33 +59,32 @@ function showBreweryResults(data) {
     var breweryLongitude = '';
     var breweryName = '';
     $.each(data, function(index, item) {
-        console.log(item);
-        breweryInfo += "<hr><li class='nameBrewery'>Name: " + item.brewery.name + "</li>" + "<li class='street-addressBrewery'>Street Address: " + item.streetAddress + "</li>" + "<li class='cityBrewery'>City: " + item.locality + "</li>" + "<li class='stateBrewery'>State: " + item.region + "</li>" + "<li class='zipcodeBrewery'>Zip Code: " + item.postalCode + "</li>" + "<li class='phoneBrewery'>Phone number: " + item.phone + "</li>" + "<li class='websiteBrewery'>Website: " + item.website + "</li>" + "<li class='hoursBrewery'>Hours of Operation: " + item.hoursOfOperation + "</li></hr>"
-        breweryLatitude += item.latitude;
-        breweryLongitude += item.longitude;
-        breweryName += item.brewery.name;
-    })
-    $('.breweryResults').append(breweryInfo);
-    //Google Maps API
-    function breweryMap() {
         var myLatLng = {
-            lat: breweryLatitude,
-            lng: breweryLongitude
-        };
-        map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
-            center: myLatLng
-        });
-        var beerIcon = 'image/beermarker.png'
-        var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: breweryName,
-            icon: beerIcon
-        });
-    }
-    breweryMap();
+            lat: item.latitude,
+            lng: item.longitude
+        }
+        breweryMap(myLatLng, item.brewery.name);
+        console.log(myLatLng, 'hello');
+        breweryInfo += "<hr><li class='nameBrewery'>Name: " + item.brewery.name + "</li>" + "<li class='street-addressBrewery'>Street Address: " + item.streetAddress + "</li>" + "<li class='cityBrewery'>City: " + item.locality + "</li>" + "<li class='stateBrewery'>State: " + item.region + "</li>" + "<li class='zipcodeBrewery'>Zip Code: " + item.postalCode + "</li>" + "<li class='phoneBrewery'>Phone number: " + item.phone + "</li>" + "<li class='websiteBrewery'>Website: " + item.website + "</li>" + "<li class='hoursBrewery'>Hours of Operation: " + item.hoursOfOperation + "</li></hr>"
+    })
+    return breweryInfo;
 }
+
+// Google Maps API
+function breweryMap(myLatLng, breweryName) {
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: myLatLng
+    });
+    var beerIcon = 'image/beermarker.png'
+    var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: breweryName,
+        icon: beerIcon
+    });
+}
+
 
 $(document).ready(function() {
     $('.breweryResults').hide();
@@ -84,21 +93,6 @@ $(document).ready(function() {
         event.preventDefault();
         getBreweryRequest(userCitySearch, userStateSearch);
         $('.breweryResults').show();
-        var resultsOnPage = $('.pages');
-        $('.pages').pagination({
-            dataSource: 'http://api.brewerydb.com/v2/locations',
-            locator: 'items',
-            pageSize: 5,
-            ajax: {
-                beforeSend: function() {
-                    resultsOnPage.html('Loading data...');
-                }
-            },
-            callback: function(data, pagination) {
-                var breweryData = template(data);
-                resultsOnPage.html(breweryData);
-            }
-        })
     });
     $('.searchBeer').click(function(event) {
         event.preventDefault();
