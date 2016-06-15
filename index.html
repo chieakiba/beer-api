@@ -5,25 +5,31 @@
 	<title>Find that Beer!</title>
 	<link rel='stylesheet' href='css/normalize.css'>
 	<link type="text/css" rel="stylesheet" href="css/pagination.css">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Yeseva+One" rel="stylesheet">
 	<link rel='stylesheet' href='css/style.css'>
 </head>
 <body>
 	<div class='main'>
 		<h1 class='title'>Find that Beer!</h1>
-		<div id='map'></div>
-		<div class='userEntry'>
-			<input class='cityInput' placeholder='Enter city'></br>
-			<input class='stateInput' placeholder='Enter State'>
-		</div>
+		<section>
+			<div class='userEntry'>
+				<p>Find a brewery</p>
+				<input class='cityInput' placeholder='Enter city'></br>
+				<input class='stateInput' placeholder='Enter State'>
+			</div>
+			<div class='or'>
+				<h2>- OR -</h2>
+			</div>
+			<div class='beerFinder'>
+				<p>Find your favorite beer</p>
+				<input class='beer' placeholder='Enter the name of beer'></br>
+			</div>
+		</section>
 		<div>
 			<button class='searchBrewery'>Search</button>
-		</div>
-		<div class='beerFinder'>
-			<input class='beer' placeholder='Enter the name of beer'></br>
-		</div>
-		<div>
 			<button class='searchBeer'>Search</button>
 		</div>
+		<div id='map'></div>
 		<div class='results'>
 			<ul class='breweryResults'>
 			</ul>

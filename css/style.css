@@ -1,63 +1,91 @@
 /*background*/
-.main {
-	background-image: url('https://images.unsplash.com/photo-1452562961439-283b44358d48?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=6d42bab697c0d260092d5634d965ed7c');
+body {
+	background-image: url('https://images.unsplash.com/photo-1445140463371-d8036feedc2f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=3f947bb953b891e1ed02ae740a24a1e0');
 	background-size: 100% 100%;
 	margin-top: -1.5em;
-	height: 1000px;
+	background-repeat: no-repeat;
 }
 
 /*Header*/
 .title {
 	text-align: center;
-	font-size: 2em;
-	padding-top: 1em;
+	font-size: 4em;
+	font-family: 'Yeseva One', cursive;
+	color: #FFEA00;
 }
 
 /*Map*/
 #map {
 	height: 20em;
 	width: 35em;
-	margin-top: 20em;
+	margin-top: 3em;
 	margin-left: 2em;
 }
 
-/*User Entry*/
-.userEntry {
-	margin-top: -35em;
-	margin-left: 15em;
+/*User Inputs*/
+section {
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 input {
 	margin-top: 1em;
 	padding: 1em 5em;
 	text-align: center;
+	font-family: 'Playfair Display', serif;
+}
+
+p {
+	font-family: 'Playfair Display', serif;
+	font-size: 2em;
+}
+
+.userEntry p {
+	margin-left: 2em;
+}
+
+h2 {
+	font-family: 'Yeseva One', cursive;
+	font-size: 3em;
+}
+
+.or {
+	width: 16%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: -8em;
+}
+
+.userEntry {
+	margin-left: 5em;
 }
 
 .beerFinder {
-	margin-top: -10em;
 	margin-left: 50em;
+	margin-top: -14em;
 }
 
 /*buttons*/
-
 button {
 	text-align: center;
 	margin-top: 1em;
 	padding: 1em;
 	padding-left: 3em;
 	padding-right: 3em;
+	font-family: 'Playfair Display', serif;
 }
 
 .searchBrewery {
-	margin-left: 20em;
+	margin-left: 24em;
+	margin-top: 6em;
 }
 
 .searchBeer {
-	margin-left: 55em;
+	margin-left: 35em;
 }
 
 /*Search Results*/
-
 .breweryResults {
 	list-style: none;
 	margin-left: 41em;
@@ -65,7 +93,8 @@ button {
 	background-color: rgba(250, 204, 204, .5);
 	padding-top: 2em;
 	padding-bottom: 2em;
-	margin-top: 3em;
+	margin-top: -20em;
+	font-family: 'Playfair Display', serif;
 }
 
 .beerResults {
@@ -75,7 +104,8 @@ button {
 	background-color: rgba(250, 204, 204, .5);
 	padding-top: 2em;
 	padding-bottom: 2em;
-	margin-top: 3em;
+	margin-top: -20em;
+	font-family: 'Playfair Display', serif;
 }
 
 .breweryResults li, .beerResults li {
