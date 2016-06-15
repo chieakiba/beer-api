@@ -48,7 +48,6 @@ function getBreweryRequest(city, state) {
     }
     url = 'http://api.brewerydb.com/v2/locations';
     $.getJSON(url, params, function(data) {
-        console.log(data);
         $('.pages').pagination({
             dataSource: data,
             locator: 'data',
@@ -56,7 +55,6 @@ function getBreweryRequest(city, state) {
             callback: function(data, pagination) {
                 console.log(data);
                 var breweryData = showBreweryResults(data);
-                console.log(breweryData, 'hello');
                 $('.breweryResults').html(breweryData);
             }
         });
@@ -65,14 +63,16 @@ function getBreweryRequest(city, state) {
 
 function showBreweryResults(data) {
     var breweryInfo = '';
-    var breweryLatitude = '';
-    var breweryLongitude = '';
     var breweryName = '';
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: {lat: data[0].latitude, lng: data[0].longitude}
+    });
     $.each(data, function(index, item) {
         var myLatLng = {
             lat: item.latitude,
             lng: item.longitude
-        }
+        };
         breweryMap(myLatLng, item.brewery.name);
         console.log(myLatLng, 'hello');
         breweryInfo += "<hr><li class='nameBrewery'>Name: " + item.brewery.name + "</li>" + "<li class='street-addressBrewery'>Street Address: " + item.streetAddress + "</li>" + "<li class='cityBrewery'>City: " + item.locality + "</li>" + "<li class='stateBrewery'>State: " + item.region + "</li>" + "<li class='zipcodeBrewery'>Zip Code: " + item.postalCode + "</li>" + "<li class='phoneBrewery'>Phone number: " + item.phone + "</li>" + "<li class='websiteBrewery'>Website: " + item.website + "</li>" + "<li class='hoursBrewery'>Hours of Operation: " + item.hoursOfOperation + "</li></hr>"
@@ -82,13 +82,10 @@ function showBreweryResults(data) {
 
 // Google Maps API
 function breweryMap(myLatLng, breweryName) {
-    map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: myLatLng
-    });
-    var beerIcon = 'image/beermarker.png'
+    var breweryPositions = new google.maps.LatLng(myLatLng);
+    var beerIcon = 'image/beermarker.png';
     var marker = new google.maps.Marker({
-        position: myLatLng,
+        position: breweryPositions,
         map: map,
         title: breweryName,
         icon: beerIcon
