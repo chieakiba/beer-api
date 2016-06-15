@@ -14,7 +14,17 @@ function getBeerRequest(name) {
     url = 'http://api.brewerydb.com/v2/beers';
     $.getJSON(url, params, function(data) {
         console.log(data);
-        showBeerResults(data.data);
+        $('.pages').pagination({
+            dataSource: data,
+            locator: 'data',
+            pageSize: 5,
+            callback: function(data, pagination) {
+                console.log(data);
+                var beerData = showBeerResults(data);
+                console.log(beerData, 'hello');
+                $('.beerResults').html(beerData);
+            }
+        });
     })
 }
 
@@ -24,7 +34,7 @@ function showBeerResults(data) {
         console.log(item);
         beerInfo += '<hr><li class="nameBeer">Name: ' + item.name + '</li>' + '<li class="abvBeer">ABV: ' + item.abv + '</li>' + '<li class="foodPairingBeer">Best food to pair with: ' + item.foodPairings + '</li>' + '<li class="descriptionBeer">Description: ' + item.description + '</li></hr>'
     });
-    $('.beerResults').append(beerInfo);
+    return beerInfo;
 }
 
 //API function for brewery request
