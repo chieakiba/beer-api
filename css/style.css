@@ -1,7 +1,6 @@
 /*background*/
 body {
 	background-image: url('https://images.unsplash.com/photo-1445140463371-d8036feedc2f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=3f947bb953b891e1ed02ae740a24a1e0');
-	background-size: 100%;
 	margin-top: -1.5em;
 	background-repeat: no-repeat;
 }
