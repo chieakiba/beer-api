@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/chieakiba/beer-api/issues"
   },
-  "homepage": "https://github.com/chieakiba/beer-api#readme"
+  "homepage": "https://github.com/chieakiba/beer-api#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.11.0"
+  }
 }
