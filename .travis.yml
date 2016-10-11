@@ -1,6 +1,8 @@
-language: node_js
-node_js: node
 deploy:
   provider: heroku
   api_key:
-    secure: 
+    secure: UAgN1dkxRv4uOdNalo6d8eNuKejRUoU3G3vPgujFsch+mkl0/GfxwIjkV0CkYNd+69FBedRv7pEW+gT7rY/NNjB2pnsk2tM9rf55IW8z3GeESJu+QYZ06FWUgAWdlK6vYPGIiVoaQTqL4XQF/065gIrCxjMh4ROCEAM34yXA7AtL/N5F4GyUjqvQtxtOAMVBxWULHnNdTM50yJInxZseL5fIB76r9LLyJSwqSWPBzZLwj8ZwWbyltMa8UBnL8kbGYN5ipEHHhvbLmhhbFaQmpibC67bsqOvPIaSkJtb3n9Hq1Iu2wB5APc4wxnce5/JyEISXMRoPiZci5SVuK0nv4MXkHz5fF5Bd9QlNsYCCR+bA4ME6kTKOeedEtX7V1QT6adpI44EiBKePnWn2DdWTwa9Raqd9+ESZgeWy2VpjbIUZarqR99nEmnnGjDGjri2dgOsCB7JQ9IYabquV/RtksBVhMLaUP0wHhZqhmOfFvBsTg65JYqCtpWZSGgPJq7AhXoMWg2oH0WAgn/SJePjuoHDaA/O1EcCWse72kufq9L9k06Ur3HPEIODJy31no8WCDPozvKhAGaWO9M0YILTc/0uDFcY3XhAG+y2axAZpbix9BcCvbf0K9Uy+LXB1B1cqHTEgTUTYuFatOfo5yaXCwP9+yloiMZtV0NcFBvO4juk=
+  app: limitless-retreat-17817
+  on:
+    repo: chieakiba/beer-api
+    branch: staging
