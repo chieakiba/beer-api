@@ -25,6 +25,13 @@ The page will show you different types of beer you love and what food it best pa
 **Set Up**<br>
 Clone this repo to your desktop and run `npm install` to install all of the dependencies.
 
+Install plugin that allows Allow-Control-Access-Origin to your browser.
+For Google Chrome, install this plugin (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en).
+
+Once installed make sure that it's enabled so you can start using this app!
+
+![Imgur](http://i.imgur.com/fXyh6G0.jpg)
+
 **Usage**<br>
 Once all the dependencies are installed, you can run `nodemon server.js` to start the application. This will fire up the backend. You should be able to launch this website via http://localhost:8080.
 
