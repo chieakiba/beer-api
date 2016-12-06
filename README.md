@@ -26,7 +26,7 @@ The page will show you different types of beer you love and what food it best pa
 Clone this repo to your desktop and run `npm install` to install all of the dependencies.
 
 Install plugin that allows Allow-Control-Access-Origin to your browser.
-For Google Chrome, install this plugin (https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en).
+For Google Chrome, install this plugin: https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
 
 Once installed make sure that it's enabled so you can start using this app!
 
