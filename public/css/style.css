@@ -1,6 +1,6 @@
 /*background*/
 body {
-	height: 100vh;
+	height: 100%;
 	background-image: url('../images/brewery-hero-min.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -64,11 +64,11 @@ h2 {
 
 .beerFinder {
 	margin-left: 45em;
-	margin-top: -8em;
+	margin-top: -10em;
 }
 
 .beer{
-	margin-top: 3em;
+	margin-top: 2em;
 }
 
 /*buttons*/
@@ -82,12 +82,12 @@ button {
 }
 
 .searchBrewery {
-	margin-left: 22em;
+	margin-left: 23em;
 	margin-top: 6em;
 }
 
 .searchBeer {
-	margin-left: 32em;
+	margin-left: 31em;
 }
 
 /*Search Results*/
@@ -95,7 +95,7 @@ button {
 	list-style: none;
 	margin-left: 41em;
 	margin-right: 5em;
-	background-color: rgba(250, 204, 204, .5);
+	background-color: rgba(255, 255, 255, .90);
 	padding-top: 2em;
 	padding-bottom: 2em;
 	margin-top: -20em;
@@ -106,9 +106,10 @@ button {
 	list-style: none;
 	margin-left: 21em;
 	margin-right: 21em;
-	background-color: rgba(250, 204, 204, .5);
+	background-color: rgba(255, 255, 255, .90);
 	padding-top: 2em;
-	padding-bottom: 2em;
+	padding-right: 1em;
+	padding-bottom: 8em;
 	margin-top: -20em;
 	font-family: 'Playfair Display', serif;
 }
@@ -127,5 +128,16 @@ hr {
 .pages {
 	margin-left: auto;
 	margin-right: auto;
-	width: 28%;
+	width: 20%;
+	padding-bottom: 4em;
+	padding-top: 1em;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.paginationjs-pages li {
+	float: left;
+	padding-right: 1em;
 }

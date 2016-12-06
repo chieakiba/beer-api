@@ -83,7 +83,7 @@ function showBreweryResults(data) {
 // Google Maps API
 function breweryMap(myLatLng, breweryName) {
     var breweryPositions = new google.maps.LatLng(myLatLng);
-    var beerIcon = 'image/beermarker.png';
+    var beerIcon = 'images/beermarker.png';
     var marker = new google.maps.Marker({
         position: breweryPositions,
         map: map,
