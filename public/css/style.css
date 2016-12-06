@@ -1,8 +1,9 @@
 /*background*/
 body {
-	background-image: url('https://images.unsplash.com/photo-1445140463371-d8036feedc2f?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=3f947bb953b891e1ed02ae740a24a1e0');
-	margin-top: -1.5em;
+	height: 100vh;
+	background-image: url('../images/brewery-hero-min.jpg');
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 /*Header*/
@@ -58,11 +59,16 @@ h2 {
 
 .userEntry {
 	margin-left: 5em;
+	margin-top: 5em;
 }
 
 .beerFinder {
-	margin-left: 50em;
-	margin-top: -14em;
+	margin-left: 45em;
+	margin-top: -8em;
+}
+
+.beer{
+	margin-top: 3em;
 }
 
 /*buttons*/
@@ -76,12 +82,12 @@ button {
 }
 
 .searchBrewery {
-	margin-left: 24em;
+	margin-left: 22em;
 	margin-top: 6em;
 }
 
 .searchBeer {
-	margin-left: 35em;
+	margin-left: 32em;
 }
 
 /*Search Results*/
