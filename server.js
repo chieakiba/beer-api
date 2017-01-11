@@ -36,6 +36,15 @@ app.get('/products/:id', cors(corsOptions), function (req, res, next) { //change
   res.json({msg: 'This is CORS-enabled for a whitelisted domain.'})
 })
 
+// Mongoose
+mongoose.connect('mongodb://localhost/beerAPI');
+
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
 // For flash message to work in passport
 app.get('/flash', function(req, res){
   // Set a flash message by passing the key, followed by the value, to req.flash().
@@ -46,6 +55,16 @@ app.get('/flash', function(req, res){
 app.get('/', function(req, res){
   // Get an array of flash messages by passing the key to req.flash()
   res.render('index', { messages: req.flash('info') });
+});
+
+var Account = require('./models/account');
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
 });
 
 app.post('/login',
