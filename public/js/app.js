@@ -11,7 +11,7 @@ function getBeerRequest(name) {
         key: '4eee5db4403b144dbc068306c3d4680f',
         name: beerSearch
     }
-    url = 'http://api.brewerydb.com/v2/beers';
+    url = 'https://api.brewerydb.com/v2/beers';
     $.getJSON(url, params, function(data) {
         console.log(data);
         $('.pages').pagination({
@@ -46,7 +46,7 @@ function getBreweryRequest(city, state) {
         locality: userCitySearch,
         region: userStateSearch
     }
-    url = 'http://api.brewerydb.com/v2/locations';
+    url = 'https://api.brewerydb.com/v2/locations';
     $.getJSON(url, params, function(data) {
         $('.pages').pagination({
             dataSource: data,

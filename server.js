@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 //Enabling CORS with dynamic origin
-var whitelist = ['https://polar-earth-74315.herokuapp.com/']
+var whitelist = ['https://polar-earth-74315.herokuapp.com/', 'https://api.brewerydb.com/v2/beers']
 var corsOptions = {
   origin: function (origin, callback) {
     var originIsWhitelisted = whitelist.indexOf(origin) !== -1
