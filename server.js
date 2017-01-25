@@ -1,16 +1,20 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-
+var cors = require('cors');
 var app = express();
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(cors());
 
-app.use('*', (req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
+//Enabling CORS with dynamic origin
+var whitelist = ['https://polar-earth-74315.herokuapp.com/']
+var corsOptions = {
+  origin: function (origin, callback) {
+    var originIsWhitelisted = whitelist.indexOf(origin) !== -1
+    callback(originIsWhitelisted ? null : 'Bad Request', originIsWhitelisted)
+  }
+}
 
 app.listen(process.env.PORT || 8080);
