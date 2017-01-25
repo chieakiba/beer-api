@@ -8,6 +8,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(cors());
 
+response.writeHead(200, { 'Content-Type': contentType, 'Access-Control-Allow-Origin': '*' });
+
 //Enabling CORS with dynamic origin
 var whitelist = ['https://polar-earth-74315.herokuapp.com/', 'https://api.brewerydb.com/v2/beers']
 var corsOptions = {
