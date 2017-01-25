@@ -17,4 +17,8 @@ var corsOptions = {
   }
 }
 
+app.get('/', cors(corsOptions), function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for a whitelisted domain.'})
+})
+
 app.listen(process.env.PORT || 8080);
